@@ -43,9 +43,9 @@ nav{
   gap:14px;
 }
 .brand img{
-  width:64px;
-  height:64px;
-  border-radius:50%;
+  width:72px;
+  height:72px;
+  object-fit:contain;
 }
 .brand span{
   font-size:28px;
@@ -164,6 +164,15 @@ footer a{
   color:var(--accent);
   text-decoration:none;
 }
+.insta-link{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.insta-link img{
+  width:36px;
+  height:36px;
+}
 
 /* ===== MOBILE ===== */
 @media(max-width:900px){
@@ -179,7 +188,7 @@ footer a{
 <nav>
   <div class="nav-inner">
     <div class="brand">
-      <img src="logo.png" alt="La Casa Country Logo">
+      <img src="lacasa.png" alt="La Casa Country Logo">
       <span>La Casa Country</span>
     </div>
     <div>
@@ -241,8 +250,6 @@ footer a{
 <section id="ubicacion">
   <div class="container">
     <h2>Ubicación</h2>
-
-    <!-- GOOGLE MAPS EMBED -->
     <iframe
       src="https://www.google.com/maps?q=La%20Casa%20Country%20Mazatlan&output=embed"
       loading="lazy"
@@ -263,12 +270,13 @@ footer a{
     </div>
     <div>
       <h3>Instagram</h3>
-      <a href="https://www.instagram.com/lacasacountry" target="_blank">
-        @lacasacountry
+      <a class="insta-link" href="https://www.instagram.com/lacasacountry" target="_blank">
+        <img src="instagram.png" alt="Instagram">
+        <span>@lacasacountry</span>
       </a>
     </div>
   </div>
 </footer>
 
 </body>
-    </html>
+  </html>
