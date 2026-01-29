@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Casa Country | Mazatlán</title>
+
+  <style>
+    :root {
+      --dark:#0f0f0f;
+      --accent:#8b1c1c;
+      --light:#f8f8f8;
+    }
+
+    body {
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background:var(--light);
+      color:#222;
+      padding-bottom:140px;
+    }
+
+    /* NAV */
+    nav {
+      position:sticky;
+      top:0;
+      background:#111;
+      z-index:1000;
+    }
+    .nav-inner {
+      max-width:1200px;
+      margin:auto;
+      padding:14px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    nav a {
+      color:#fff;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:500;
+    }
+    .logo {
+      font-size:20px;
+      font-weight:700;
+    }
+
+    /* HERO */
+    header {
+      background:url("https://images.unsplash.com/photo-1541542684-4c4f1d1b20e0?auto=format&fit=crop&w=1800&q=80") center/cover;
+      position:relative;
+      color:#fff;
+    }
+    header::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.6);
+    }
+    .hero {
+      position:relative;
+      text-align:center;
+      padding:100px 20px;
+    }
+    .hero h1 {
+      font-size:48px;
+      margin:0;
+    }
+    .hero p {
+      font-size:20px;
+      margin-top:10px;
+      opacity:.9;
+    }
+
+    /* SECTIONS */
+    section {
+      padding:80px 20px;
+    }
+    .container {
+      max-width:1200px;
+      margin:auto;
+    }
+    h2 {
+      text-align:center;
+      font-size:34px;
+      margin-bottom:50px;
+    }
+
+    /* STORY */
+    .story {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+    .story img {
+      width:100%;
+      border-radius:16px;
+    }
+    .story p {
+      font-size:18px;
+      line-height:1.6;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:14px;
+    }
+    .gallery img {
+      width:100%;
+      height:230px;
+      object-fit:cover;
+      border-radius:14px;
+    }
+
+    /* MENU */
+    .menu {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:26px;
+    }
+    .menu-item {
+      background:#fff;
+      padding:30px;
+      border-radius:18px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      font-size:18px;
+      font-weight:500;
+    }
+
+    /* MAP */
+    iframe {
+      width:100%;
+      height:320px;
+      border:0;
+      border-radius:18px;
+    }
+
+    /* FOOTER */
+    footer {
+      background:#111;
+      color:#fff;
+      padding:60px 20px;
+    }
+    .footer-grid {
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;
+    }
+    footer h3 {
+      margin-top:0;
+    }
+
+    /* BUTTONS */
+    .buttons {
+      position:fixed;
+      bottom:15px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:12px;
+      z-index:999;
+    }
+    .buttons a {
+      padding:14px 18px;
+      border-radius:999px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 8px 20px rgba(0,0,0,.3);
+    }
+    .call {background:#007bff;}
+    .wa {background:#25d366;}
+    .reserve {background:#8b1c1c;}
+
+    @media(max-width:800px){
+      .story {grid-template-columns:1fr;}
+      .hero h1 {font-size:34px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">La Casa Country</div>
+    <div>
+      <a href="#story">Historia</a>
+      <a href="#menu">Menú</a>
+      <a href="#gallery">Galería</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="hero">
+    <h1>La Casa Country</h1>
+    <p>Cortes premium y cocina mexicana en Mazatlán</p>
+  </div>
+</header>
+
+<section id="story">
+  <div class="container story">
+    <div>
+      <h2>Nuestra Historia</h2>
+      <p>
+        En La Casa Country combinamos tradición, sabor y pasión por la buena mesa.
+        Desde nuestros cortes a la parrilla hasta cada detalle del servicio,
+        creamos una experiencia cálida y auténtica para compartir en familia
+        y con amigos.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80">
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <h2>Menú Destacado</h2>
+    <div class="menu">
+      <div class="menu-item">Rib Eye a la parrilla</div>
+      <div class="menu-item">Arrachera marinada</div>
+      <div class="menu-item">Filete de res</div>
+      <div class="menu-item">Costillas BBQ</div>
+      <div class="menu-item">Pastas artesanales</div>
+      <div class="menu-item">Guarniciones clásicas</div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80">
+      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80">
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Ubicación</h2>
+    <iframe src="https://www.google.com/maps?q=La%20Casa%20Country%20Mazatlan&output=embed"></iframe>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>La Casa Country</h3>
+      <p>Mazatlán, Sinaloa</p>
+    </div>
+    <div>
+      <h3>Horario</h3>
+      <p>Lunes a Domingo<br>1:00 PM – 11:00 PM</p>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <p>📞 +52 669 916 4535</p>
+    </div>
+  </div>
+</footer>
+
+<div class="buttons">
+  <a class="call" href="tel:+526699164535">📞 Llamar</a>
+  <a class="wa" href="https://wa.me/526699164535" target="_blank">WhatsApp</a>
+  <a class="reserve" href="https://wa.me/526699164535?text=Hola%20quiero%20reservar" target="_blank">
+    Reservar
+  </a>
+</div>
+
+</body>
+  </html>
