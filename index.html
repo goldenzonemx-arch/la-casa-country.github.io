@@ -35,22 +35,7 @@ nav{
   padding:18px 24px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-.brand img{
-  width:72px;
-  height:72px;
-  object-fit:contain;
-}
-.brand span{
-  font-size:28px;
-  font-weight:700;
-  color:var(--white);
+  justify-content:flex-end;
 }
 nav a{
   color:var(--white);
@@ -71,9 +56,13 @@ header{
   text-align:center;
   padding:140px 20px;
 }
-.hero h1{
-  font-size:64px;
-  margin:0;
+.hero img{
+  max-width:420px;
+  width:90%;
+  height:auto;
+  display:block;
+  margin:0 auto 10px;
+  animation: fadeIn 1.4s ease;
 }
 .hero p{
   font-size:22px;
@@ -174,11 +163,15 @@ footer a{
   height:36px;
 }
 
+/* ===== ANIMATION ===== */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
 /* ===== MOBILE ===== */
 @media(max-width:900px){
   .story{grid-template-columns:1fr}
-  .hero h1{font-size:42px}
-  .brand span{font-size:22px}
 }
 </style>
 </head>
@@ -187,10 +180,6 @@ footer a{
 
 <nav>
   <div class="nav-inner">
-    <div class="brand">
-      <img src="lacasa.png" alt="La Casa Country Logo">
-      <span>La Casa Country</span>
-    </div>
     <div>
       <a href="#historia">Historia</a>
       <a href="#menu">Menú</a>
@@ -202,7 +191,7 @@ footer a{
 
 <header>
   <div class="hero">
-    <h1>La Casa Country</h1>
+    <img src="data:image/png;base64,PASTE_BASE64_LACASA_LOGO_HERE" alt="La Casa Country Logo">
     <p>Cortes premium y tradición en Mazatlán</p>
   </div>
 </header>
@@ -271,7 +260,7 @@ footer a{
     <div>
       <h3>Instagram</h3>
       <a class="insta-link" href="https://www.instagram.com/lacasacountry" target="_blank">
-        <img src="instagram.png" alt="Instagram">
+        <img src="data:image/png;base64,PASTE_BASE64_INSTAGRAM_ICON_HERE" alt="Instagram">
         <span>@lacasacountry</span>
       </a>
     </div>
