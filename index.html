@@ -1,654 +1,948 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>La Casa Country | Mazatlán</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>La Casa Country | Mazatlán - Cortes Premium & Alta Cocina</title>
+    <meta name="description" content="Restaurante La Casa Country en Mazatlán - Tacos, fajitas, robust steak combos & Tex-Mex cuisine in a colorful, wood-paneled space.">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --black:#0a0a0a;
-  --gold:#c6a86b;
-  --gold-dark:#b08d55;
-  --gold-soft:#e5d2a0;
-  --white:#ffffff;
-  --cream:#f8f6f1;
-  --price:#8B0000;
-}
+    <!-- Add Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-/* Basic Reset */
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--cream);
-  font-family:Inter, system-ui, -apple-system, sans-serif;
-  color:#222;
-  -webkit-font-smoothing:antialiased;
-}
+    <style>
+        :root {
+            --olive-green: #5c7c3e;
+            --olive-dark: #4a6332;
+            --olive-light: #7a9c5d;
+            --cream: #f9f7f4;
+            --warm-beige: #e8dcc8;
+            --gold: #d4a574;
+            --gold-dark: #b8935f;
+            --burgundy: #8b3a3a;
+            --dark-brown: #3d2817;
+            --text-dark: #2c2416;
+            --white: #ffffff;
+        }
 
-/* NAV */
-nav{
-  background:rgba(10,10,10,0.95);
-  position:sticky;
-  top:0;
-  z-index:999;
-  border-bottom:1px solid rgba(198,168,107,0.3);
-  backdrop-filter:blur(8px);
-}
-.nav-inner{
-  max-width:1300px;
-  margin:auto;
-  padding:15px 22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* LOGO & BRAND */
-.logo-container {
-  display:flex;
-  align-items:center;
-  gap:15px;
-  cursor:pointer;
-}
-.logo-img {
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  border:2px solid var(--gold);
-  object-fit:cover;
-  background:#fff;
-}
-.brand{
-  font-family:"Playfair Display", serif;
-  font-size:26px;
-  font-weight:900;
-  color:var(--gold);
-  letter-spacing:1px;
-}
-.brand small{
-  display:block;
-  font-family:Inter, sans-serif;
-  font-size:11px;
-  color:rgba(255,255,255,.65);
-  font-weight:500;
-  letter-spacing:1px;
-  margin-top:4px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* NAV LINKS */
-.nav-links{display:flex;align-items:center;gap:15px}
-.nav-links button{
-  background:none;
-  border:none;
-  cursor:pointer;
-  color:#f3efe6;
-  font-family:Inter, sans-serif;
-  font-size:15px;
-  padding:8px 12px;
-  border-radius:6px;
-  transition:all .25s;
-}
-.nav-links button:hover, .nav-links button.active{
-  color:var(--black);
-  background:var(--gold);
-}
+        body {
+            margin: 0;
+            background: var(--cream);
+            font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
 
-/* HERO SECTION */
-header{
-  /* Default Home Image */
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://images.unsplash.com/photo-1541542684-4c4f1d1b20e0?auto=format&fit=crop&w=2000&q=80") center/cover;
-  color:white;
-  text-align:center;
-  padding:140px 20px;
-  position:relative;
-  transition: background 0.5s ease;
-}
-.hero h1{
-  font-family:"Playfair Display", serif;
-  font-size:60px;
-  margin:0;
-  color:var(--gold);
-  text-shadow:0 5px 20px rgba(0,0,0,0.6);
-}
-.hero p{
-  font-size:20px;
-  color:var(--gold-soft);
-  margin-top:15px;
-}
-/* GENERAL CONTENT STYLES */
-section{padding:80px 20px}
-.container{max-width:1200px;margin:auto}
+        .social-bar {
+            background: var(--olive-dark);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
 
-h2{
-  text-align:center;
-  font-family:"Playfair Display", serif;
-  font-size:38px;
-  margin-bottom:40px;
-  position:relative;
-  color:#111;
-}
-h2:after{
-  content:"";
-  display:block;
-  width:70px;
-  height:3px;
-  background:var(--gold);
-  margin:15px auto 0;
-}
+        .social-bar a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
 
-/* --- HOME VIEW STYLES (Story, Gallery, Maps) --- */
-.story{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-.story img{
-  width:100%;
-  height:450px;
-  object-fit:cover;
-  border-radius:12px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.15);
-}
-.story p{ font-size:18px; line-height:1.7; color:#333; }
+        .social-bar a:hover {
+            color: var(--white);
+        }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-.gallery img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  border-radius:10px;
-  transition:transform 0.4s;
-}
-.gallery img:hover{ transform:scale(1.02); }
+        .top-bar {
+            background: var(--olive-green);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
 
-.map-wrap iframe{
-  width:100%;
-  height:400px;
-  border:0;
-  border-radius:12px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.1);
-}
+        .top-bar a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 8px;
+        }
 
-/* --- MENU VIEW STYLES --- */
-.menu-category-title {
-  font-family:"Playfair Display", serif;
-  font-size:28px;
-  color:var(--gold-dark);
-  margin:50px 0 25px 0;
-  border-left:4px solid var(--black);
-  padding-left:15px;
-}
-.menu-category-note { font-size:14px; color:#666; font-family:Inter; font-style:italic; display:block; margin-top:5px; font-weight:400;}
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
 
-.menu-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
-  gap:25px;
-}
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            border-bottom: 3px solid var(--gold);
+        }
 
-.item{
-  background:white;
-  padding:20px;
-  border-radius:8px;
-  border:1px solid rgba(0,0,0,0.04);
-  box-shadow:0 5px 15px rgba(0,0,0,0.03);
-  transition:transform 0.2s;
-}
-.item:hover{ transform:translateY(-4px); box-shadow:0 10px 25px rgba(0,0,0,0.08); }
+        .nav-inner {
+            max-width: 1400px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.item-header{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; border-bottom:1px dashed #eee; padding-bottom:8px;}
-.item-name{ font-weight:700; font-size:17px; color:var(--black); font-family:"Playfair Display"; }
-.item-price{ font-weight:700; color:var(--price); font-size:17px; margin-left:10px; white-space:nowrap;}
-.item-desc{ font-size:14px; color:#555; line-height:1.5; margin:0; }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
 
-/* Sub-items (like salad add-ons) */
-.sub-items { background:#fafafa; padding:8px; margin-top:10px; border-radius:4px; font-size:13px; color:#444; }
-.sub-row { display:flex; justify-content:space-between; margin-bottom:4px; }
+        .logo-container:hover {
+            transform: scale(1.03);
+        }
 
-/* Drink Table */
-.drink-table { width:100%; border-collapse:collapse; font-size:14px; margin-top:10px;}
-.drink-table td { padding:6px 0; border-bottom:1px solid #eee; }
-.drink-table tr:last-child td { border:none; }
-.drink-table .price-cell { text-align:right; color:var(--price); font-weight:700; }
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            object-fit: cover;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-/* FOOTER */
-footer{
-  background:var(--black);
-  color:white;
-  padding:70px 20px;
-}
-.footer-grid{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:40px;
-}
-.insta{ display:flex; align-items:center; gap:10px; color:var(--gold); text-decoration:none; font-weight:600; }
+        .brand {
+            font-family: "Lora", serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--olive-dark);
+            letter-spacing: 0.5px;
+        }
 
-/* UTILITIES FOR TABS */
-.view-section {
-  display: none; /* Hidden by default */
-  opacity: 0;
-  transition: opacity 0.4s ease-in;
-}
-.view-section.active {
-  display: block;
-  opacity: 1;
-}
+        .brand small {
+            display: block;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 13px;
+            color: var(--olive-green);
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
 
-@media(max-width:800px){
-  .story{grid-template-columns:1fr}
-  .hero h1{font-size:38px}
-  .menu-grid{grid-template-columns:1fr}
-}
-</style>
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links button {
+            background: none;
+            border: 2px solid transparent;
+            cursor: pointer;
+            color: var(--text-dark);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all .3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links button:hover {
+            background: var(--olive-light);
+            color: white;
+            border-color: var(--olive-dark);
+        }
+
+        .nav-links button.active {
+            background: var(--olive-green);
+            color: white;
+            border-color: var(--olive-dark);
+        }
+
+        header {
+            background: linear-gradient(rgba(92, 124, 62, 0.7), rgba(61, 40, 23, 0.8)), url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=80") center/cover;
+            color: white;
+            text-align: center;
+            padding: 160px 30px 120px;
+            position: relative;
+            transition: background 0.6s ease;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .hero h1 {
+            font-family: "Lora", serif;
+            font-size: 72px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: var(--warm-beige);
+            margin-top: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            margin-top: 35px;
+        }
+
+        .hero-cta button {
+            background: var(--burgundy);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 20px rgba(139, 58, 58, 0.4);
+        }
+
+        .hero-cta button:hover {
+            background: var(--olive-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(92, 124, 62, 0.5);
+        }
+
+        section {
+            padding: 90px 30px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: "Lora", serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            color: var(--olive-dark);
+            letter-spacing: 1px;
+        }
+
+        h2:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 20px auto 0;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-style: italic;
+        }
+
+        #view-home, #view-menu {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #view-home.active, #view-menu.active {
+            opacity: 1;
+        }
+
+        .welcome-banner {
+            background: linear-gradient(135deg, var(--olive-green), var(--olive-dark));
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .welcome-banner h3 {
+            font-family: "Lora", serif;
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .welcome-banner p {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .story img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s;
+        }
+
+        .story img:hover {
+            transform: scale(1.02);
+        }
+
+        .story-content h3 {
+            font-family: "Lora", serif;
+            font-size: 32px;
+            color: var(--olive-dark);
+            margin-bottom: 20px;
+        }
+
+        .story p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--gold);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h4 {
+            font-family: "Lora", serif;
+            font-size: 22px;
+            color: var(--olive-dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .reviews-section {
+            background: white;
+            padding: 60px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin: 60px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: var(--cream);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--olive-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .review-info h5 {
+            font-family: "Lora", serif;
+            font-size: 18px;
+            color: var(--olive-dark);
+            margin-bottom: 3px;
+        }
+
+        .review-stars {
+            color: var(--gold);
+            font-size: 16px;
+        }
+
+        .review-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+            font-style: italic;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.4s, box-shadow 0.4s;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-section {
+            background: white;
+            padding: 60px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .location-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .location-info h3 {
+            font-family: "Lora", serif;
+            font-size: 32px;
+            color: var(--olive-dark);
+            margin-bottom: 15px;
+        }
+
+        .location-info p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .location-info .phone {
+            font-size: 24px;
+            color: var(--burgundy);
+            font-weight: 700;
+            margin-top: 15px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .location-info .phone:hover {
+            text-decoration: underline;
+        }
+
+        .location-info .hours {
+            display: inline-block;
+            background: var(--olive-green);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Menu Styles */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item h4 {
+            font-family: "Lora", serif;
+            font-size: 20px;
+            color: var(--olive-dark);
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .menu-item .price {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--burgundy);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--olive-dark);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-bar {
+            background: none;
+            padding: 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .nav-inner {
+                padding: 18px 20px;
+            }
+
+            .logo-img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .brand {
+                font-size: 24px;
+            }
+
+            .nav-links button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            footer .container {
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<nav>
-  <div class="nav-inner">
-    <div class="logo-container" onclick="switchTab('home')">
-      <img src="1000038516.png" alt="La Casa Country Logo" class="logo-img">
-      <div class="brand">La Casa Country<small>Tradición y Sabor del Norte</small></div>
+    <div class="social-bar">
+        <a href="https://www.facebook.com/lacasacountry.mazatlan" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/lacasacountry/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tripadvisor.com/Restaurant_Review-g150792-d1190799-Reviews-La_Casa_Country_Mazatlan-Mazatlan_Pacific_Coast.html" target="_blank"><i class="fab fa-tripadvisor"></i></a>
     </div>
 
-    <div class="nav-links">
-      <button onclick="switchTab('home')" id="btn-home" class="active">Inicio</button>
-      <button onclick="switchTab('menu')" id="btn-menu">Menú Completo</button>
-      <button onclick="scrollToFooter()">Contacto</button>
+    <div class="top-bar">
+        Llámenos al <a href="tel:+526692703354">+52 669 270 3354</a> | Abierto diariamente
     </div>
-  </div>
-</nav>
 
-<header id="main-header">
-  <div class="hero">
-    <h1 id="hero-title">La Casa Country</h1>
-    <p id="hero-desc">Alta cocina · Cortes premium · Experiencia exclusiva</p>
-  </div>
-</header>
+    <nav>
+        <div class="nav-inner">
+            <div class="logo-container">
+                <img class="logo-img" src="https://i.ibb.co/YFBvgSzK/1769871675268.png" alt="La Casa Country Logo">
+                <div class="brand">La Casa Country<small>Mazatlán</small></div>
+            </div>
+            <div class="nav-links">
+                <button class="active" data-view="home">Inicio</button>
+                <button data-view="menu">Menú</button>
+            </div>
+        </div>
+    </nav>
 
-<main>
+    <header>
+        <div class="hero">
+            <h1>La Casa Country</h1>
+            <p>Disfruta de cortes premium, fajitas, tacos y cocina Tex-Mex en un espacio colorido y acogedor.</p>
+            <div class="hero-cta">
+                <button>Reservar Ahora</button>
+            </div>
+        </div>
+    </header>
 
-  <div id="view-home" class="view-section active">
-    
-    <section>
-      <div class="container story">
-        <div>
-          <h2>Nuestra Historia</h2>
-          <p>
-            La Casa Country representa la máxima expresión de la alta cocina en Mazatlán.
-            Seleccionamos ingredientes de origen premium y aplicamos técnicas culinarias
-            de nivel internacional para ofrecer una experiencia gastronómica reservada
-            para quienes buscan excelencia, privacidad y servicio impecable.
-          </p>
-          <p style="margin-top:14px; color:#444;">
-            Menús degustación, cortes exclusivos, sommelier y un servicio a la altura: 
-            lujo discreto y absoluto cuidado en cada detalle.
-          </p>
-        </div>
-        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1400&q=80" alt="Interior Restaurant">
-      </div>
-    </section>
-    <section style="background:#fff;">
-      <div class="container">
-        <h2>Galería</h2>
-        <div class="gallery">
-          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1400&q=80" alt="Comida Gourmet">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80" alt="Interior">
-          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1400&q=80" alt="Cortes">
-          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1400&q=80" alt="Mesa servida">
-        </div>
-      </div>
-    </section>
+    <div id="view-home" class="active">
+        <section>
+            <div class="container welcome-banner">
+                <h3>Bienvenido</h3>
+                <p>En La Casa Country, combinamos lo mejor de la cocina mexicana con toques Tex-Mex para ofrecerte una experiencia única en Mazatlán.</p>
+            </div>
+        </section>
 
-    <section>
-      <div class="container">
-        <h2>Ubicación</h2>
-        <p style="text-align:center; color:#555;">Av. Camarón Sábalo S/N, Sábalo Country, Mazatlán, Sinaloa.</p>
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.4856789123456!2d-106.4523456!3d23.2567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE1JzE1LjYiTiAxMDbCsDI3JzE1LjYiVw!5e0!3m2!1ses!2smx!4v1600000000000!5m2!1ses!2smx" title="Mapa La Casa Country"></iframe>
-        </div>
-      </div>
-    </section>
+        <section class="container">
+            <div class="story">
+                <img src="https://i.ibb.co/8LcHyqQQ/Screenshot-20260131-102131-com-google-android-apps-maps-Maps-Activity.jpg" alt="Nuestra historia">
+                <div class="story-content">
+                    <h3>Nuestra Historia</h3>
+                    <p>Fundado en Mazatlán, La Casa Country ha sido un referente en cortes premium y alta cocina desde hace años.</p>
+                    <p>Ven y descubre por qué somos el favorito de locales y turistas.</p>
+                </div>
+            </div>
+        </section>
 
-  </div> 
-  <div id="view-menu" class="view-section">
-    <div class="container">
-      
-      <h3 class="menu-category-title">Botanas (Appetizers)</h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Guacamole (250gr)</span><span class="item-price">$220</span></div>
-          <p class="item-desc">Preparado en su mesa con cebolla, cilantro, chile serrano y limón.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Tripitas de Leche (8oz)</span><span class="item-price">$385</span></div>
-          <p class="item-desc">Con cebolla frita, chiles toreados, tortillas y salsa de molcajete.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Queso Fundido (8oz)</span><span class="item-price">$235</span></div>
-          <p class="item-desc">Natural, con chorizo o con rajas poblanas.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Botana Surtida (900gr)</span><span class="item-price">$870</span></div>
-          <p class="item-desc"><strong>Para grupos:</strong> Tripitas, Guacamole, Panela y Champiñones al ajo.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Chicharrones de Rib Eye</span><span class="item-price">$455</span></div>
-          <p class="item-desc">200grs. Con cebolla frita, chiles jalapeños y salsa.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Carpaccio de Salmón</span><span class="item-price">$285</span></div>
-          <p class="item-desc">220gr. Finas láminas sazonadas, vinagreta, alcaparras y crotones.</p>
-        </div>
-         <div class="item">
-          <div class="item-header"><span class="item-name">Alitas BBQ (6-8pz)</span><span class="item-price">$195</span></div>
-          <p class="item-desc">Bañadas en salsa, con zanahoria, apio y jícama.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Flautas de Pollo (3pz)</span><span class="item-price">$165</span></div>
-          <p class="item-desc">Tacos dorados de pollo con guacamole al centro.</p>
-        </div>
-      </div>
+        <section class="container">
+            <h2>Características</h2>
+            <p class="section-subtitle">Lo que nos hace especiales</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🥩</span>
+                    <h4>Cortes Premium</h4>
+                    <p>Selección de las mejores carnes importadas y locales.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🌶️</span>
+                    <h4>Cocina Tex-Mex</h4>
+                    <p>Fajitas, tacos y más con sabores auténticos.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🍹</span>
+                    <h4>Ambiente Acogedor</h4>
+                    <p>Espacio rústico y familiar para disfrutar.</p>
+                </div>
+            </div>
+        </section>
 
-      <h3 class="menu-category-title">Empanadas (Patties)</h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Empanada Humita</span><span class="item-price">$90</span></div>
-          <p class="item-desc">Elote tierno, queso mozzarella y jitomate deshidratado.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Empanada Bolognesa</span><span class="item-price">$85</span></div>
-          <p class="item-desc">Rellena de delicioso guiso de carne.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Trío de Empanadas</span><span class="item-price">$205</span></div>
-          <p class="item-desc">Disfrute este combo de sabores especial.</p>
-        </div>
-      </div>
+        <section class="reviews-section">
+            <h2>Opiniones de Clientes</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">A</div>
+                        <div class="review-info">
+                            <h5>Anonymous</h5>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Service was friendly and attentive, atmosphere was very good and the food was excellent. Two had steaks cooked to perfection and two had fish that was delicious."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">Y</div>
+                        <div class="review-info">
+                            <h5>Yelp Reviewer</h5>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"A must to visit this steak house. Food and service excellent. They actually prepared the guacamole and salsa in front of you !!! Table side salsa!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">F</div>
+                        <div class="review-info">
+                            <h5>Facebook User</h5>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"We just went there two nights ago. The food, atmosphere and service were excellent."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">W</div>
+                        <div class="review-info">
+                            <h5>Wanderlog Reviewer</h5>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Restaurante La Casa Country in Mazatlan is a highly recommended steakhouse with excellent food and service. Reviewers praise the flavorful carne asada, well-cooked steaks."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">F</div>
+                        <div class="review-info">
+                            <h5>Facebook User</h5>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"We went today about 3:30, no wait, delicious food, great friendly service and beautiful atmosphere!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">B</div>
+                        <div class="review-info">
+                            <h5>Bill Elliot</h5>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Mexico has amazing steaks, but hands down this restaurant had absolutely the best arrachera we've ever had."</p>
+                </div>
+            </div>
+        </section>
 
-      <h3 class="menu-category-title">Sopas y Ensaladas</h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Sopa de Tortilla</span><span class="item-price">$95</span></div>
-          <p class="item-desc">240ml. Con queso fresco, aguacate y chicharrón.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Jugo de Carne</span><span class="item-price">$155</span></div>
-          <p class="item-desc">240ml. Oxtail Soup. Con jerez, trozos de res, cebolla y cilantro.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Ensalada Cesar</span><span class="item-price">$125</span></div>
-          <div class="sub-items">
-            <div class="sub-row"><span>Con Pollo (125gr)</span> <span>$175</span></div>
-            <div class="sub-row"><span>Con Camarón (6-8pz)</span> <span>$245</span></div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Ensalada Mixta</span><span class="item-price">$95</span></div>
-          <p class="item-desc">Lechuga y vegetales frescos.</p>
-        </div>
-      </div>
+        <section class="container">
+            <h2>Galería</h2>
+            <div class="gallery">
+                <img src="https://i.ibb.co/8LcHyqQQ/Screenshot-20260131-102131-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 1">
+                <img src="https://i.ibb.co/chjmKzHG/Screenshot-20260131-102059-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 2">
+                <img src="https://i.ibb.co/9kTw0XLM/Screenshot-20260131-102049-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 3">
+                <img src="https://i.ibb.co/1t9GDjnC/Screenshot-20260131-102046-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 4">
+                <img src="https://i.ibb.co/jk0sKWwk/Screenshot-20260131-102042-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 5">
+                <img src="https://i.ibb.co/3g7Wy7H/Screenshot-20260131-102037-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 6">
+                <img src="https://i.ibb.co/60vkBRmN/Screenshot-20260131-102031-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 7">
+                <img src="https://i.ibb.co/bckK0Fg/Screenshot-20260131-102025-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 8">
+                <img src="https://i.ibb.co/6Rwy1h0j/Screenshot-20260131-102021-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 9">
+                <img src="https://i.ibb.co/gL1bPWdy/Screenshot-20260131-102011-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 10">
+                <img src="https://i.ibb.co/d0ybkGYC/Screenshot-20260131-102009-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 11">
+                <img src="https://i.ibb.co/mVMrGSXh/Screenshot-20260131-102007-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 12">
+                <img src="https://i.ibb.co/hJjp3gWN/Screenshot-20260131-102005-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 13">
+                <img src="https://i.ibb.co/kgPj6HGM/Screenshot-20260131-101959-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 14">
+                <img src="https://i.ibb.co/BHjpZKfx/Screenshot-20260131-101956-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 15">
+                <img src="https://i.ibb.co/zgYw4Jv/Screenshot-20260131-101954-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 16">
+                <img src="https://i.ibb.co/5hPMZcXc/Screenshot-20260131-101949-com-google-android-apps-maps-Maps-Activity.jpg" alt="Imagen 17">
+            </div>
+        </section>
 
-      <h3 class="menu-category-title">Cortes Selectos (Steaks) 
-        <span class="menu-category-note">Incluyen papa al horno y ensalada mixta. Agregue Sopa de Tortilla por $45.</span>
-      </h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Arrachera (300gr)</span><span class="item-price">$475</span></div>
-          <p class="item-desc">Skirt Steak. Sabor suave, con frijoles y cebolla asada.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Rib Eye Roll-On (400gr)</span><span class="item-price">$630</span></div>
-          <p class="item-desc">Marmoleo medio, suave y sabroso.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Vacío (400gr)</span><span class="item-price">$495</span></div>
-          <p class="item-desc">Corte suave de sabor y textura peculiar.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">New York (400gr)</span><span class="item-price">$480</span></div>
-          <p class="item-desc">Corte ligeramente magro, consistencia suave.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Top Sirloin Doble (800gr)</span><span class="item-price">$795</span></div>
-          <p class="item-desc">Pieza completa de 28oz, ideal para compartir (2 personas).</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Filete Mignon (300gr)</span><span class="item-price">$550</span></div>
-          <p class="item-desc">Con salsa madeira, tocino y champiñones.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Filete de Res (300gr)</span><span class="item-price">$520</span></div>
-          <p class="item-desc">Beef Fillet. Tierno y jugoso.</p>
-        </div>
-      </div>
-
-      <h3 class="menu-category-title">Parrilladas (Barbecues)</h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Parrillada Suprema</span><span class="item-price">$1,650</span></div>
-          <p class="item-desc"><strong>4 Personas.</strong> Rib Eye, NY, Arrachera, Sirloin, Chorizo y Queso Fundido. Incluye 4 guarniciones.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Parrillada Norteña</span><span class="item-price">$1,195</span></div>
-          <p class="item-desc"><strong>3 Personas.</strong> NY, Arrachera, Sirloin, Chorizo y Queso Fundido. Incluye 3 guarniciones.</p>
-        </div>
-      </div>
-
-      <h3 class="menu-category-title">Sabor del Mar</h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Camarones Imperiales</span><span class="item-price">$460</span></div>
-          <p class="item-desc">6 pz. Rellenos de queso y envueltos en tocino.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Camarones al Ajo</span><span class="item-price">$440</span></div>
-          <p class="item-desc">6 pz. Sazonados con vino blanco y mantequilla.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Salmón (220gr)</span><span class="item-price">$415</span></div>
-          <p class="item-desc">Al mojo de ajo, chimichurri o mantequilla.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Pesca del Día (220gr)</span><span class="item-price">$325</span></div>
-          <p class="item-desc">Al ajillo con champiñones o al ajo.</p>
-        </div>
-      </div>
-
-      <h3 class="menu-category-title">Comida Mexicana</h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Molcajete de Res</span><span class="item-price">$360</span></div>
-          <p class="item-desc">250gr. Tiras sazonadas con panela, cebolla y salsa en piedra volcánica.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Arrachera Albañil</span><span class="item-price">$465</span></div>
-          <p class="item-desc">300gr. Tiras finas con tocino, poblano y cebolla.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Tacos de Top Sirloin</span><span class="item-price">$280</span></div>
-          <p class="item-desc">200gr. Con tortillas hechas a mano y frijoles charros.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Chile Relleno</span><span class="item-price">$210</span></div>
-          <p class="item-desc">De queso. Con arroz, cebolla asada y frijoles.</p>
-        </div>
-        </div>
-      <h3 class="menu-category-title">Paquetes Country <span class="menu-category-note">Incluyen Sopa de Tortilla y Helado</span></h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Costillas BBQ (300gr)</span><span class="item-price">$385</span></div>
-          <p class="item-desc">Salsa BBQ casera, ensalada de col y papas fritas.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Milanesa de Res</span><span class="item-price">$335</span></div>
-          <p class="item-desc">150gr. Empanizada y al gratín.</p>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Papa Suprema</span><span class="item-price">$325</span></div>
-          <p class="item-desc">Rellena de pulpa, carne asada y al gratín.</p>
-        </div>
-      </div>
-
-      <h3 class="menu-category-title">Menú de Niños</h3>
-      <div class="menu-grid">
-        <div class="item">
-          <div class="item-header"><span class="item-name">Nuggets de Pollo</span><span class="item-price">$125</span></div>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Arrachera Jr (150gr)</span><span class="item-price">$195</span></div>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Hamburguesa Jr</span><span class="item-price">$155</span></div>
-        </div>
-         <div class="item">
-          <div class="item-header"><span class="item-name">Quesadillas (3pz)</span><span class="item-price">$135</span></div>
-        </div>
-      </div>
-
-      <h3 class="menu-category-title">Bebidas (Drinks)</h3>
-      <div class="menu-grid">
-        <div class="item">
-          <span class="item-name">Margaritas & Tequilas</span>
-          <p class="menu-category-note" style="margin-bottom:10px;">Sabores: Fresa, Mandarina, Maracuyá, Jamaica.</p>
-          <table class="drink-table">
-             <tr><td>Hornitos / Tradicional</td> <td class="price-cell">$140</td></tr>
-             <tr><td>Cuervo 1800</td> <td class="price-cell">$170</td></tr>
-             <tr><td>Don Julio (70/Reposado)</td> <td class="price-cell">$210</td></tr>
-          </table>
-        </div>
-        <div class="item">
-          <span class="item-name">Cervezas</span>
-          <table class="drink-table">
-             <tr><td>Pacífico / Corona / Indio</td> <td class="price-cell">$48</td></tr>
-             <tr><td>Michelob / Modelo</td> <td class="price-cell">$55</td></tr>
-             <tr><td>Stella Artois</td> <td class="price-cell">$70</td></tr>
-          </table>
-        </div>
-         <div class="item">
-          <span class="item-name">Coctelería</span>
-          <table class="drink-table">
-             <tr><td>Mojito Clásico</td> <td class="price-cell">$105</td></tr>
-             <tr><td>Piña Colada / Daiquiri</td> <td class="price-cell">$110</td></tr>
-             <tr><td>Margarita Clásica</td> <td class="price-cell">$120</td></tr>
-          </table>
-        </div>
-      </div>
-      
-      <h3 class="menu-category-title">Postres & Celebraciones</h3>
-      <div class="menu-grid">
-        <div class="item">
-           <div class="item-header"><span class="item-name">Plátanos Flameados</span><span class="item-price">$320</span></div>
-           <p class="item-desc">Espectáculo en su mesa.</p>
-        </div>
-        <div class="item">
-           <div class="item-header"><span class="item-name">Pay Vaquero</span><span class="item-price">$140</span></div>
-           <p class="item-desc">Manzana caliente con helado.</p>
-        </div>
-         <div class="item">
-           <div class="item-header"><span class="item-name">Flan de Caramelo</span><span class="item-price">$90</span></div>
-        </div>
-        <div class="item">
-          <div class="item-header"><span class="item-name">Menú Grupos (20+ Pax)</span><span class="item-price">$445</span></div>
-          <p class="item-desc">Opción Cielo Mar y Tierra. Incluye Sopa y Postre.</p>
-        </div>
-      </div>
-
+        <section class="map-section">
+            <div class="location-info">
+                <h3>Nuestra Ubicación</h3>
+                <p>Camarón Sábalo 4755, El Encanto, 82103 Mazatlán, Sin.</p>
+                <a class="phone" href="tel:+526692703354">+52 669 270 3354</a>
+                <span class="hours">Lun - Sáb: 13:00 - 23:00</span>
+            </div>
+            <div class="map-wrap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.456!2d-106.420116685081!3d23.272739084819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869f5915a0d5fc17%3A0x2c1f5d2b7b9e2a4a!2sLa%20Casa%20Country!5e0!3m2!1ses!2smx!4v1706670000000" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
     </div>
-  </div> 
-  </main>
 
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>La Casa Country</h3>
-      <p>Av. Camarón Sábalo S/N,<br>Sábalo Country, Mazatlán.</p>
+    <div id="view-menu">
+        <section class="container">
+            <h2>Menú Completo</h2>
+            <p class="section-subtitle">Descubre nuestros platillos destacados con precios en MXN</p>
+            <div class="menu-grid">
+                <!-- Appetizers -->
+                <div class="menu-item">
+                    <h4>Guacamole</h4>
+                    <p>Fresh avocado dip prepared tableside</p>
+                    <span class="price">$150 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Chips and Salsa</h4>
+                    <p>House-made chips with fresh salsa</p>
+                    <span class="price">$80 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Fried Tripe</h4>
+                    <p>Crispy fried tripe appetizer</p>
+                    <span class="price">$120 MXN</span>
+                </div>
+                <!-- Soups and Salads -->
+                <div class="menu-item">
+                    <h4>Sopa de Tortilla</h4>
+                    <p>Traditional tortilla soup</p>
+                    <span class="price">$100 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Ensalada Casa</h4>
+                    <p>House salad with fresh greens</p>
+                    <span class="price">$120 MXN</span>
+                </div>
+                <!-- Steaks -->
+                <div class="menu-item">
+                    <h4>Ribeye Steak</h4>
+                    <p>Grilled ribeye cooked to perfection</p>
+                    <span class="price">$380 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Arrachera</h4>
+                    <p>Marinated skirt steak with sides</p>
+                    <span class="price">$350 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>New York Strip</h4>
+                    <p>Juicy New York strip steak</p>
+                    <span class="price">$360 MXN</span>
+                </div>
+                <!-- Tex-Mex -->
+                <div class="menu-item">
+                    <h4>Chicken Fajitas</h4>
+                    <p>Sizzling chicken fajitas with vegetables</p>
+                    <span class="price">$320 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Sirloin Tacos</h4>
+                    <p>Three sirloin tacos with toppings</p>
+                    <span class="price">$180 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Parrillada Norteña</h4>
+                    <p>Mixed grill for two people</p>
+                    <span class="price">$700 MXN</span>
+                </div>
+                <!-- Seafood -->
+                <div class="menu-item">
+                    <h4>Camarones al Mojo de Ajo</h4>
+                    <p>Garlic shrimp</p>
+                    <span class="price">$280 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Filete de Pescado</h4>
+                    <p>Grilled fish fillet</p>
+                    <span class="price">$250 MXN</span>
+                </div>
+                <!-- Desserts -->
+                <div class="menu-item">
+                    <h4>Flan</h4>
+                    <p>Traditional caramel flan</p>
+                    <span class="price">$90 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Pastel de Tres Leches</h4>
+                    <p>Three milk cake</p>
+                    <span class="price">$100 MXN</span>
+                </div>
+                <!-- Drinks -->
+                <div class="menu-item">
+                    <h4>Margarita</h4>
+                    <p>Classic margarita</p>
+                    <span class="price">$120 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Cerveza</h4>
+                    <p>Local beer</p>
+                    <span class="price">$60 MXN</span>
+                </div>
+                <div class="menu-item">
+                    <h4>Agua Fresca</h4>
+                    <p>Fresh fruit water</p>
+                    <span class="price">$50 MXN</span>
+                </div>
+            </div>
+        </section>
     </div>
-    <div>
-      <h3>Reservaciones</h3>
-      <p style="font-size:18px; color:var(--gold);">669 916 4535</p>
-    </div>
-    <div>
-      <h3>Síguenos</h3>
-      <a class="insta" href="https://www.instagram.com/lacasacountry" target="_blank">
-        <span>@lacasacountry</span>
-      </a>
-    </div>
-  </div>
-</footer>
 
-<script>
-  // Tab Switching Logic
-  function switchTab(tabName) {
-    const homeView = document.getElementById('view-home');
-    const menuView = document.getElementById('view-menu');
-    const btnHome = document.getElementById('btn-home');
-    const btnMenu = document.getElementById('btn-menu');
-    
-    // Header elements to update
-    const header = document.getElementById('main-header');
-    const heroTitle = document.getElementById('hero-title');
-    const heroDesc = document.getElementById('hero-desc');
+    <footer>
+        <div class="container">
+            <p>Camarón Sábalo 4755, El Encanto, 82103 Mazatlán, Sin. | Tel: <a href="tel:+526692703354">+52 669 270 3354</a></p>
+            <p>&copy; 2026 La Casa Country. Todos los derechos reservados.</p>
+            <div class="social-bar">
+                <a href="https://www.facebook.com/lacasacountry.mazatlan" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/lacasacountry/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tripadvisor.com/Restaurant_Review-g150792-d1190799-Reviews-La_Casa_Country_Mazatlan-Mazatlan_Pacific_Coast.html" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+            </div>
+        </div>
+    </footer>
 
-    if (tabName === 'menu') {
-      // Show Menu
-      homeView.classList.remove('active');
-      setTimeout(() => {
-        homeView.style.display = 'none';
-        menuView.style.display = 'block';
-        setTimeout(() => menuView.classList.add('active'), 50);
-      }, 400);
-
-      // Buttons
-      btnHome.classList.remove('active');
-      btnMenu.classList.add('active');
-
-      // Update Header Look
-      heroTitle.textContent = "Nuestro Menú";
-      heroDesc.textContent = "Alta cocina, cortes y tradición";
-      // Change background image for menu view
-      document.querySelector('header').style.background = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=80') center/cover`;
-      
-    } else {
-      // Show Home
-      menuView.classList.remove('active');
-      setTimeout(() => {
-        menuView.style.display = 'none';
-        homeView.style.display = 'block';
-        setTimeout(() => homeView.classList.add('active'), 50);
-      }, 400);
-
-      // Buttons
-      btnMenu.classList.remove('active');
-      btnHome.classList.add('active');
-
-      // Update Header Look
-      heroTitle.textContent = "La Casa Country";
-      heroDesc.textContent = "Alta cocina · Cortes premium · Experiencia exclusiva";
-      // Revert background image
-      document.querySelector('header').style.background = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541542684-4c4f1d1b20e0?auto=format&fit=crop&w=2000&q=80') center/cover`;
-    }
-    
-    // Smooth scroll to top
-    window.scrollTo(0, 0);
-  }
-
-  function scrollToFooter() {
-    document.querySelector('footer').scrollIntoView({behavior: 'smooth'});
-  }
-</script>
-
+    <script>
+        const buttons = document.querySelectorAll('.nav-links button');
+        const views = document.querySelectorAll('[id^="view-"]');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                views.forEach(v => v.classList.remove('active'));
+                document.getElementById(`view-${btn.dataset.view}`).classList.add('active');
+            });
+        });
+    </script>
 </body>
-            </html>                                     
+</html>
